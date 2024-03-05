@@ -66,10 +66,10 @@ export default function Header() {
   `)
  
   const { homepageLink } = data;
-  console.error(data);
+//  console.error(data);
 
   const { navItems, cta, newcta } = data.layout.header
-  console.error("homepageLink value:", homepageLink);
+ // console.error("homepageLink value:", homepageLink);
 
   const [isOpen, setOpen] = React.useState(false)
 
@@ -109,7 +109,7 @@ export default function Header() {
           </nav>
 
 
-          <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
+          {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
 
           <div>{homepageLink && <Button to={homepageLink.href}>{homepageLink.text}</Button>}</div>
 
