@@ -53,11 +53,7 @@ export default function Header() {
               }
             }
           }
-          cta {
-            id
-            href
-            text
-          }
+
           newcta {
             id
             href
