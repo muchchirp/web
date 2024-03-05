@@ -34,7 +34,7 @@ export default function Hero(props) {
             
             <Text as="p">{props.text}</Text>
             <ButtonList links={props.links} />
-            <Subhead as="p">{props.subhead}</Subhead>
+            <Text variant="small">{props.subhead}</Text>
           </Box>
         </Flex>
       </Container>
