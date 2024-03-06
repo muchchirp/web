@@ -109,8 +109,6 @@ export default function Header() {
           </nav>
 
 
-          {/* <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div> */}
-
           <div>{homepageLink && <Button to={homepageLink.href}>{homepageLink.text}</Button>}</div>
 
 
