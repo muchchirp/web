@@ -3,7 +3,8 @@ import { theme } from "../theme.css"
 import { media } from "./ui.css"
 
 export const desktopHeaderNavWrapper = style({
-  position: "relative",
+  position: "sticky",
+  top: 0,
   zIndex: 1,
   display: "none",
   "@media": {
@@ -16,7 +17,9 @@ export const desktopHeaderNavWrapper = style({
 
 const mobileHeaderNavWrapperBase = style({
   display: "block",
-  position: "relative",
+  position: "sticky",
+  top: 0,
+  zIndex: 1,
   paddingTop: theme.space[3],
   "@media": {
     [media.small]: {
