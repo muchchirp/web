@@ -313,6 +313,62 @@ exports.createSchemaCustomization = async ({ actions }) => {
       logos: [HomepageLogo]
     }
 
+
+
+    interface WhatPage implements Node {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage
+      content: [HomepageBlock]
+    }
+
+    interface WhatHero implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      text: String
+      image: HomepageImage
+    }
+
+    interface WhatStat implements Node {
+      id: ID!
+      value: String
+      label: String
+    }
+
+    interface WhatStatList implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      content: [WhatStat]
+    }
+
+    interface WhatProfile implements Node {
+      id: ID!
+      image: HomepageImage
+      name: String
+      jobTitle: String
+    }
+
+    interface WhatLeadership implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      kicker: String
+      heading: String
+      subhead: String
+      content: [WhatProfile]
+    }
+
+    interface WhatLogoList implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      links: [HomepageLink]
+      logos: [HomepageLogo]
+    }
+
+
+
     interface Page implements Node {
       id: ID!
       slug: String!
@@ -561,6 +617,65 @@ exports.createSchemaCustomization = async ({ actions }) => {
       links: [HomepageLink]
       logos: [HomepageLogo]
     }
+
+
+
+
+    type SanityWhatPage implements Node & WhatPage {
+      id: ID!
+      title: String
+      description: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      content: [HomepageBlock]
+    }
+
+    type SanityWhatHero implements Node & WhatHero & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String
+      text: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+    }
+
+    type SanityWhatStat implements Node & WhatStat {
+      id: ID!
+      value: String
+      label: String
+    }
+
+    type SanityWhatStatList implements Node & WhatStatList & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      content: [WhatStat]
+    }
+
+    type SanityWhatProfile implements Node & WhatProfile {
+      id: ID!
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      name: String
+      jobTitle: String
+    }
+
+    type SanityWhatLeadership implements Node & WhatLeadership & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      kicker: String
+      heading: String
+      subhead: String
+      content: [WhatProfile]
+    }
+
+    type SanityWhatLogoList implements Node & WhatLogoList & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String
+      links: [HomepageLink]
+      logos: [HomepageLogo]
+    }
+
+
+
+
 
     type SanityPage implements Node & Page {
       id: ID!
