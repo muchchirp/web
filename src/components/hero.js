@@ -1,3 +1,4 @@
+//hero.js
 import { graphql } from "gatsby"
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import * as React from "react"
@@ -38,9 +39,13 @@ export default function Hero(props) {
           </Box>
         </Flex>
       </Container>
+
+
+      
     </Section>
   )
 }
+
 
 export const query = graphql`
   fragment HomepageHeroContent on HomepageHero {

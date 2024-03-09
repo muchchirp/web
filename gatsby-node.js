@@ -214,6 +214,27 @@ exports.createSchemaCustomization = async ({ actions }) => {
       content: [HomepageProduct]
     }
 
+
+
+    interface HomepageNextBox implements Node {
+      id: ID!
+      heading: String
+      text: String
+      image: HomepageImage
+      links: [HomepageLink]
+    }
+
+    interface HomepageNextBoxList implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      heading: String
+      kicker: String
+      text: String
+      content: [HomepageNextBox]
+    }
+
+
+
     interface Homepage implements Node {
       id: ID!
       title: String
@@ -521,6 +542,27 @@ exports.createSchemaCustomization = async ({ actions }) => {
       text: String
       content: [HomepageProduct]
     }
+
+
+    type SanityHomepageNextBox implements Node & HomepageNextBox {
+      id: ID!
+      heading: String
+      text: String
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      links: [HomepageLink] @link
+    }
+
+    type SanityHomepageNextBoxList implements Node & HomepageNextBoxList & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      heading: String
+      kicker: String
+      text: String
+      content: [HomepageNextBox]
+    }
+
+
+
 
     type SanityNavItem implements Node & NavItem & HeaderNavItem {
       id: ID!

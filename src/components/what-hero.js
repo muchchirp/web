@@ -15,6 +15,9 @@ export default function WhatHero(props) {
           <Text className={styles.whatHeroText}>{props.text}</Text>
         )}
       </Container>
+
+
+
       <Container width="wide">
         {props.image && (
           <GatsbyImage
@@ -27,6 +30,10 @@ export default function WhatHero(props) {
     </Section>
   )
 }
+
+
+
+
 
 export const query = graphql`
   fragment WhatHeroContent on WhatHero {

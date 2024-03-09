@@ -14,7 +14,7 @@ import {
   LinkList,
 } from "./ui"
 
-function Product(props) {
+function NextBox(props) {
   return (
     <Box center>
       {props.image && (
@@ -31,7 +31,7 @@ function Product(props) {
   )
 }
 
-export default function ProductList(props) {
+export default function NextBoxList(props) {
   return (
     <Section>
       <Container>
@@ -43,9 +43,9 @@ export default function ProductList(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
         <FlexList gap={4} variant="responsive">
-          {props.content.map((product) => (
-            <li key={product.id}>
-              <Product {...product} />
+          {props.content.map((nextbox) => (
+            <li key={nextbox.id}>
+              <NextBox {...nextbox} />
             </li>
           ))}
         </FlexList>
@@ -55,7 +55,7 @@ export default function ProductList(props) {
 }
 
 export const query = graphql`
-  fragment HomepageProductListContent on HomepageProductList {
+  fragment HomepageNextBoxListContent on HomepageNextBoxList {
     id
     kicker
     heading
