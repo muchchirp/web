@@ -11,7 +11,11 @@ export default function Homepage(props) {
   return (
     <Layout>
       {homepage.blocks.map((block) => {
+        //console.log(block); // Check the structure of each block
+
         const { id, blocktype, ...componentProps } = block
+        //console.log(blocktype, componentProps); // Verify the blocktype and props
+
         const Component = sections[blocktype] || Fallback
         return <Component key={id} {...componentProps} />
       })}
