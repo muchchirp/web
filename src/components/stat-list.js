@@ -33,7 +33,7 @@ export default function StatList(props) {
         <Flex responsive variant="end">
           <Box width="half">
             {props.icon && (
-              <Icon alt={props.icon.alt} image={props.icon.gatsbyImageData} />
+              <Icon alt='' image={props.icon.gatsbyImageData} />
             )}
             <Heading>
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
