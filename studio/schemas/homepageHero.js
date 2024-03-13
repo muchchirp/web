@@ -19,5 +19,18 @@ export default {
         },
       ],
     },
+    { title: "BSubhead", name: "bsubhead", type: "string" },
+    { title: "BText", name: "btext", type: "string" },
+    {
+      title: "BContent",
+      name: "bcontent",
+      type: "array",
+      of: [
+        {
+          type: "reference",
+          to: [{ type: "homepageNextBox" }],
+        },
+      ],
+    },
   ],
 }

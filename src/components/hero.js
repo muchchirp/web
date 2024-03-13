@@ -10,7 +10,6 @@ import {
   Heading,
   Kicker,
   Section,
-  Subhead,
   Text,
 } from "./ui"
 
@@ -35,7 +34,7 @@ export default function Hero(props) {
             
             <Text as="p">{props.text}</Text>
             <ButtonList links={props.links} />
-            <Text variant="small">{props.subhead}</Text>
+
           </Box>
         </Flex>
       </Container>
@@ -64,5 +63,6 @@ export const query = graphql`
       gatsbyImageData
       alt
     }
+
   }
 `

@@ -104,6 +104,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
       text: String
       links: [HomepageLink]
+      content: [HomepageNextBox]
+
     }
 
     interface HomepageFeature implements Node & HomepageBlock {
@@ -433,6 +435,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage @link(by: "id", from: "image.asset._ref")
       text: String
       links: [HomepageLink] @link
+      content: [HomepageNextBox]
+
     }
 
     type SanityHomepageFeature implements Node & HomepageFeature & HomepageBlock {

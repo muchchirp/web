@@ -38,22 +38,22 @@ export default function NextBoxList(props) {
     <Section>
       <Container>
 
-        <Box left paddingY={4}>
-          <Heading>
+        <Box center paddingY={4}>
+{/*           <Heading>
             {props.heading}
-          </Heading>
+          </Heading> */}
           {props.kicker && <Kicker>{props.kicker}</Kicker>}
 
         </Box>
 
-        <FlexList gap={4} variant="responsive">
+{/*         <FlexList gap={4} variant="responsive">
           {props.content.map((nextbox) => (
             <li key={nextbox.id}>
               <NextBox {...nextbox} />
             </li>
           ))}
 
-        </FlexList>
+        </FlexList> */}
 
         <Box center paddingY={4}>
           {props.text && <Text>{props.text}</Text>}
