@@ -17,7 +17,7 @@ function Testimonial(props) {
   return (
     <Flex variant="start">
       {props.avatar && (
-        <Avatar alt={props.avatar.alt} image={props.avatar.gatsbyImageData} />
+        <Avatar alt='' image={props.avatar.gatsbyImageData} />
       )}
       <Blockquote>
         <Text as="p" variant="lead">
