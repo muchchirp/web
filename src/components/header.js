@@ -54,12 +54,6 @@ export default function Header() {
             }
           }
 
-          newcta {
-            id
-            href
-            text
-          }
-
         }
       }
     }
@@ -68,7 +62,7 @@ export default function Header() {
   const { homepageLink } = data;
 //  console.error(data);
 
-  const { navItems, cta, newcta } = data.layout.header
+  const { navItems, cta } = data.layout.header
  // console.error("homepageLink value:", homepageLink);
 
   const [isOpen, setOpen] = React.useState(false)

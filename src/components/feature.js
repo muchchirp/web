@@ -13,6 +13,8 @@ import {
 } from "./ui"
 
 export default function Feature(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Section padding={4} background="muted">
       <Container>
@@ -20,7 +22,7 @@ export default function Feature(props) {
           <Box width="half" order={props.flip ? 1 : null}>
             {props.image && (
               <GatsbyImage
-                alt={props.image.alt}
+              alt={imageAlt}
                 image={getImage(props.image.gatsbyImageData)}
               />
             )}

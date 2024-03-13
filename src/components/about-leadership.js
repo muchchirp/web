@@ -13,12 +13,14 @@ import {
 } from "./ui"
 
 function AboutProfile(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Box width="third" padding={4} center>
       {props.image && (
         <GatsbyImage
-          alt={props.image.alt}
-          image={getImage(props.image.gatsbyImageData)}
+        alt={imageAlt}
+        image={getImage(props.image.gatsbyImageData)}
         />
       )}
       <Space size={3} />

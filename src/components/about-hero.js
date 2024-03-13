@@ -5,6 +5,8 @@ import { Container, Section, Text, SuperHeading } from "./ui"
 import * as styles from "./about-hero.css"
 
 export default function AboutHero(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Section>
       <Container>
@@ -18,8 +20,8 @@ export default function AboutHero(props) {
       <Container width="wide">
         {props.image && (
           <GatsbyImage
-            alt={props.image.alt}
-            image={getImage(props.image.gatsbyImageData)}
+          alt={imageAlt}
+          image={getImage(props.image.gatsbyImageData)}
             className={styles.aboutHeroImage}
           />
         )}

@@ -12,6 +12,8 @@ import {
 } from "./ui"
 
 export default function HomepageCta(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Container width="fullbleed">
       <Section padding={5} radius="large" background="primary">
@@ -26,8 +28,8 @@ export default function HomepageCta(props) {
         {props.image && (
           <Nudge left={5} right={5} bottom={5}>
             <GatsbyImage
-              alt={props.image.alt}
-              image={getImage(props.image.gatsbyImageData)}
+                alt={imageAlt}
+                image={getImage(props.image.gatsbyImageData)}
             />
           </Nudge>
         )}

@@ -25,6 +25,8 @@ function Stat(props) {
 }
 
 export default function StatList(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Container width="fullbleed">
       <Section padding={5} radius="large" background="primary">
@@ -51,7 +53,7 @@ export default function StatList(props) {
             {props.image && (
               <Nudge right={5} bottom={5}>
                 <GatsbyImage
-                  alt={props.image.alt}
+                  alt={imageAlt}
                   image={getImage(props.image.gatsbyImageData)}
                 />
               </Nudge>

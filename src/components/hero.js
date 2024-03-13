@@ -14,6 +14,9 @@ import {
 } from "./ui"
 
 export default function Hero(props) {
+  console.log(props); // This line will log the props to the console
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Section>
       <Container>
@@ -21,7 +24,7 @@ export default function Hero(props) {
           <Box width="half">
             {props.image && (
               <GatsbyImage
-                alt={props.image.alt}
+                alt={imageAlt}
                 image={getImage(props.image.gatsbyImageData)}
               />
             )}

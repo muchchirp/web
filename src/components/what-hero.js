@@ -5,6 +5,9 @@ import { Container, Section, Text, SuperHeading } from "./ui"
 import * as styles from "./what-hero.css"
 
 export default function WhatHero(props) {
+
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
     <Section>
       <Container>
@@ -21,8 +24,8 @@ export default function WhatHero(props) {
       <Container width="wide">
         {props.image && (
           <GatsbyImage
-            alt={props.image.alt}
-            image={getImage(props.image.gatsbyImageData)}
+          alt={imageAlt}
+          image={getImage(props.image.gatsbyImageData)}
             className={styles.whatHeroImage}
           />
         )}

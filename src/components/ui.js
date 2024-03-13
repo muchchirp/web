@@ -3,6 +3,8 @@ import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import isAbsoluteURL from "is-absolute-url"
 import * as React from "react"
 import * as styles from "./ui.css"
+import PropTypes from 'prop-types'
+
 
 export const cx = (...args) => args.filter(Boolean).join(" ")
 
@@ -205,13 +207,13 @@ export function Blockquote(props) {
   return <Base as="blockquote" cx={[styles.blockquote]} {...props} />
 }
 
-export function Avatar({ alt, image }) {
+export function Avatar({ alt = '' , image }) {
   return (
     <GatsbyImage alt={alt} image={getImage(image)} className={styles.avatar} />
   )
 }
 
-export function Logo({ alt, image, size = "small" }) {
+export function Logo({ alt = '', image, size = "small" }) {
   return (
     <GatsbyImage
       alt={alt}
@@ -221,7 +223,7 @@ export function Logo({ alt, image, size = "small" }) {
   )
 }
 
-export function Icon({ alt, image, size = "medium" }) {
+export function Icon({ alt = '', image, size = "medium" }) {
   return (
     <GatsbyImage
       alt={alt}
@@ -246,3 +248,31 @@ export function VisuallyHidden(props) {
 export function BlockLink(props) {
   return <Link className={styles.blockLink} {...props} />
 }
+
+//prop validation with PropTypes to document the expected type of each prop and whether it is required
+Avatar.propTypes = {
+  image: PropTypes.object.isRequired,
+  alt: PropTypes.string,
+};
+
+Logo.propTypes = {
+  image: PropTypes.object.isRequired,
+  alt: PropTypes.string,
+};
+
+Icon.propTypes = {
+  image: PropTypes.object.isRequired,
+  alt: PropTypes.string,
+};
+
+Avatar.defaultProps = {
+  alt: '',
+};
+
+Logo.defaultProps = {
+  alt: '',
+};
+
+Icon.defaultProps = {
+  alt: '',
+};

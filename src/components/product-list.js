@@ -15,12 +15,15 @@ import {
 } from "./ui"
 
 function Product(props) {
+  const imageAlt = props.image?.alt ? props.image.alt : '';
+
   return (
+    
     <Box center>
       {props.image && (
         <Icon
-          alt={props.image.alt}
-          image={props.image.gatsbyImageData}
+        alt={imageAlt}
+        image={props.image.gatsbyImageData}
           size="large"
         />
       )}
