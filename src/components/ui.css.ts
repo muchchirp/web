@@ -1,3 +1,4 @@
+//ui.css
 import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
@@ -633,3 +634,25 @@ export const visuallyHidden = style({
 export const debug = style({
   outline: "1px solid tomato",
 })
+// Responsive white box style
+export const whiteBox = style({
+  backgroundColor: '##F5F8FE',
+  padding: '1rem',
+  borderRadius: '4px',
+  boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
+  '@media': {
+    [media.large]: {
+      padding: '1.5rem',
+    },
+  },
+});
+
+// Define responsive widths for boxes
+export const boxWidths = style({
+  width: '100%', // Default mobile width
+  '@media': {
+    [media.large]: {
+      width: '100px', // Adjust to your specific desktop width
+    },
+  },
+});
