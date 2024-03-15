@@ -21,10 +21,20 @@ import {
 export default function Hero(props) {
   console.log(props); // This line will log the props to the console
   const imageAlt = props.image?.alt ? props.image.alt : '';
+  const backgroundImg = getImage(props.background.gatsbyImageData);
   const { bsubhead, btext, bcontent } = props;
 
+  // Adding background image style
+  const sectionStyle = backgroundImg ? {
+    backgroundImage: `url(${backgroundImg.images.fallback.src})`,
+    backgroundSize: 'cover',
+    backgroundPosition: 'center center',
+    backgroundRepeat: 'no-repeat',
+  } : {};
+
   return (
-    <Section>
+    // Apply the background style to this Section
+    <Section style={sectionStyle}>
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half">
@@ -45,32 +55,30 @@ export default function Hero(props) {
           </Box>
         </Flex>
 
+        {/* New Section for bcontent */}
+        <Section>
+          <Kicker style={{ paddingBottom: '20px' }}>{bsubhead}</Kicker>
+            <Flex gap={4} variant="start" wrap>
+              {bcontent.map((item, index) => (
+                <Box key={index} style={{ width: 'calc(30% - 6px)', backgroundColor: '#F5F8FE', padding: '2rem', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', }} className={whiteBox}>
+                  {item.image && item.image.gatsbyImageData && (
+                    <GatsbyImage
+                      image={getImage(item.image.gatsbyImageData)}
+                      alt={item.text}
+                      style={{ height: '24px', width: '24px' }}
+                    />
+                  )}
+                  <Text>{item.text}</Text>
+                </Box>
+              ))}
+            </Flex>
 
-      {/* New Section for bcontent */}
-      <Section>
-        <Kicker style={{ paddingBottom: '20px' }}>{bsubhead}</Kicker>
-          <Flex gap={4} variant="start" wrap>
-            {bcontent.map((item, index) => (
-              <Box key={index} style={{ width: 'calc(30% - 6px)', backgroundColor: '#F5F8FE', padding: '2rem', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', }} className={whiteBox}>
-                {item.image && item.image.gatsbyImageData && (
-                  <GatsbyImage
-                    image={getImage(item.image.gatsbyImageData)}
-                    alt={item.text}
-                    style={{ height: '24px', width: '24px' }}
-                  />
-                )}
-                <Text>{item.text}</Text>
-              </Box>
-            ))}
-          </Flex>
-
-        <Text center as="p" style={{ paddingTop: '20px' }}>{btext}</Text>
-      </Section>
-
+          <Text center as="p" style={{ paddingTop: '20px' }}>{btext}</Text>
+        </Section>
 
       </Container>
     </Section>
-  )
+  );
 }
 
 
@@ -101,7 +109,11 @@ export const query = graphql`
       gatsbyImageData
       alt
     }
-
+    background {
+      id
+      gatsbyImageData
+      alt
+    }
   
     
   }

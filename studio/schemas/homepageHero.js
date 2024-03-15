@@ -7,6 +7,7 @@ export default {
     { title: "Kicker", name: "kicker", type: "string" },
     { title: "Subhead", name: "subhead", type: "string" },
     { title: "Image", name: "image", type: "image" },
+    { title: "Background", name: "background", type: "image" },
     { title: "Text", name: "text", type: "string" },
     {
       title: "Links",
