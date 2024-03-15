@@ -11,6 +11,8 @@ export function LogoItem(props) {
 }
 
 export default function LogoList(props) {
+  console.log(props); // This line will log the props to the console
+
   return (
     <Section paddingY={4}>
       <Container width="narrow">

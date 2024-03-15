@@ -1,5 +1,6 @@
 {
-  "name": "gatsby-starter-sanity-homepage",
+  "name": "cicadavpn",
+  "license": "UNLICENSED",
   "version": "1.0.0",
   "engines": {
     "node": ">=18.0.0"
