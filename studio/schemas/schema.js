@@ -10,6 +10,8 @@ import homepageHero from "./homepageHero"
 import homepageFeature from "./homepageFeature"
 import homepageFeatureList from "./homepageFeatureList"
 import homepageCta from "./homepageCta"
+import homepageDownload from "./homepageDownload"
+import homepageDownloadList from "./homepageDownloadList"
 import homepageLogo from "./homepageLogo"
 import homepageLogoList from "./homepageLogoList"
 import homepageTestimonial from "./homepageTestimonial"
@@ -64,6 +66,8 @@ export default createSchema({
     homepageCta,
     homepageLogo,
     homepageLogoList,
+    homepageDownload,
+    homepageDownloadList,
     homepageTestimonial,
     homepageTestimonialList,
     homepageBenefit,

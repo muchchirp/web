@@ -19,7 +19,7 @@ function Product(props) {
 
   return (
     
-    <Box center>
+    <Box id="service" center>
       {props.image && (
         <Icon
         alt={imageAlt}

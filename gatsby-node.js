@@ -144,11 +144,25 @@ exports.createSchemaCustomization = async ({ actions }) => {
       alt: String
     }
 
+    interface HomepageDownload implements Node {
+      id: ID!
+      image: HomepageImage
+      alt: String
+      text: String
+    }
+
     interface HomepageLogoList implements Node & HomepageBlock {
       id: ID!
       blocktype: String
       text: String
       logos: [HomepageLogo]
+    }
+
+    interface HomepageDownloadList implements Node & HomepageBlock {
+      id: ID!
+      blocktype: String
+      text: String
+      downloads: [HomepageDownload]
     }
 
     interface HomepageTestimonial implements Node {
@@ -482,6 +496,20 @@ exports.createSchemaCustomization = async ({ actions }) => {
       blocktype: String @blocktype
       text: String
       logos: [HomepageLogo]
+    }
+
+    type SanityHomepageDownload implements Node & HomepageDownload {
+      id: ID!
+      image: HomepageImage @link(by: "id", from: "image.asset._ref")
+      alt: String
+      text: String
+    }
+
+    type SanityHomepageDownloadList implements Node & HomepageDownloadList & HomepageBlock {
+      id: ID!
+      blocktype: String @blocktype
+      text: String
+      downloads: [HomepageDownload]
     }
 
     type SanityHomepageTestimonial implements Node & HomepageTestimonial {
