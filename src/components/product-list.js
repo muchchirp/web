@@ -19,7 +19,7 @@ function Product(props) {
 
   return (
     
-    <Box id="service" center>
+    <Box  center>
       {props.image && (
         <Icon
         alt={imageAlt}
@@ -36,7 +36,7 @@ function Product(props) {
 
 export default function ProductList(props) {
   return (
-    <Section>
+    <Section id="service">
       <Container>
         <Box center paddingY={4}>
           <Heading>
