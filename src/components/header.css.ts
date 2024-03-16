@@ -10,7 +10,7 @@ export const desktopHeaderNavWrapper = style({
   "@media": {
     [media.small]: {
       display: "block",
-      paddingTop: theme.space[4],
+      paddingTop: theme.space[0],
     },
   },
 })
@@ -20,7 +20,7 @@ const mobileHeaderNavWrapperBase = style({
   position: "sticky",
   top: 0,
   zIndex: 1,
-  paddingTop: theme.space[3],
+  paddingTop: theme.space[0],
   "@media": {
     [media.small]: {
       display: "none",

@@ -23,6 +23,8 @@ export default {
             { type: "homepageBenefitList" },
             { type: "homepageStatList" },
             { type: "homepageProductList" },
+            { type: "homepageDownloadList" },
+
             { type: "homepageNextBoxList" },
           ],
         },

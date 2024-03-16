@@ -162,6 +162,9 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String
       text: String
+      kicker: String
+      heading: String
+      subhead: String
       downloads: [HomepageDownload]
     }
 
@@ -509,6 +512,9 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String @blocktype
       text: String
+      kicker: String
+      heading: String
+      subhead: String
       downloads: [HomepageDownload]
     }
 

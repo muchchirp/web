@@ -4,6 +4,9 @@ export default {
   type: "document",
   fields: [
     { title: "Text", name: "text", type: "string" },
+    { title: "Heading", name: "heading", type: "string" },
+    { title: "Kicker", name: "kicker", type: "string" },
+    { title: "Subhead", name: "subhead", type: "string" },
     {
       title: "Downloads",
       name: "downloads",
