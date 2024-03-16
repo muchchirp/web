@@ -8,6 +8,7 @@ import StripePricingTable from '../components/StripePricingTable';
 import { Space, Container, Section, Box, Text, Heading, Logo } from "../components/ui"
 
 
+
 const PricingPage = () => {
   return (
     <Layout>
