@@ -125,6 +125,7 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
 
 
         </Flex>
+        <Space size={2} />
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
         <Space size={2} />

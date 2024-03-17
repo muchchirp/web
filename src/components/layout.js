@@ -7,11 +7,12 @@ import CustomCookieConsent from './CustomCookieConsent';
 const Layout = ({ children }) => {
   return (
     <>
-          <CustomCookieConsent />
+          
 
       <Slice alias="header" />
       {children}
       <Slice alias="footer" />
+      <CustomCookieConsent />
     </>
   )
 }

@@ -1,3 +1,4 @@
+//header.css.ts
 import { style, styleVariants } from "@vanilla-extract/css"
 import { theme } from "../theme.css"
 import { media } from "./ui.css"
@@ -5,7 +6,7 @@ import { media } from "./ui.css"
 export const desktopHeaderNavWrapper = style({
   position: "sticky",
   top: 0,
-  zIndex: 1,
+  zIndex: 100,
   display: "none",
   "@media": {
     [media.small]: {
@@ -19,7 +20,7 @@ const mobileHeaderNavWrapperBase = style({
   display: "block",
   position: "sticky",
   top: 0,
-  zIndex: 1,
+  zIndex: 100,
   paddingTop: theme.space[0],
   "@media": {
     [media.small]: {
@@ -49,7 +50,7 @@ export const mobileNavOverlay = style({
   height: "100vh",
   paddingTop: theme.space[4],
   background: theme.colors.primary,
-  zIndex: 1,
+  zIndex: 100,
   "@media": {
     [media.small]: {
       display: "none",

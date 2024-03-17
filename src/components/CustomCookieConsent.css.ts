@@ -15,7 +15,7 @@ export const cookieConsentContainer = style({
   justifyContent: 'space-between',
   alignItems: 'center',
   boxShadow: '0 -2px 5px rgba(0,0,0,0.1)',
-  zIndex: 1000,
+  zIndex: 1,
 });
 
 export const message = style({
