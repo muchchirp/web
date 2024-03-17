@@ -29,6 +29,15 @@ export default function Header() {
         href
         text
       }
+      allHomepageLink {
+        edges {
+          node {
+            id
+            text
+            href
+          }
+        }
+      }
       layout {
         header {
           id
@@ -64,7 +73,16 @@ export default function Header() {
 
   const { navItems, cta } = data.layout.header
  // console.error("homepageLink value:", homepageLink);
+// ID of the item you want to display in the button
+const targetItemId = "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8"; // Replace with the actual ID "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8"
 
+// Find the specific link by ID
+const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targetItemId)?.node;
+
+
+ console.log(data); // This will log the data object containing all GraphQL query results
+
+   
   const [isOpen, setOpen] = React.useState(false)
 
   React.useEffect(() => {
@@ -102,8 +120,8 @@ export default function Header() {
             </FlexList>
           </nav>
 
+          <div>{targetLink && <Button to={targetLink.href}>{targetLink.text}</Button>}</div>
 
-          <div>{homepageLink && <Button to={homepageLink.href}>{homepageLink.text}</Button>}</div>
 
 
         </Flex>
