@@ -4,9 +4,13 @@ import { theme } from "../theme.css"
 import { media } from "./ui.css"
 
 export const desktopHeaderNavWrapper = style({
-  position: "sticky",
+  position: "fixed",
   top: 0,
-  zIndex: 100,
+  left: 0,
+  right: 0,
+  zIndex: 2,
+  backgroundColor: 'white',
+  borderRadius: 32,
   display: "none",
   "@media": {
     [media.small]: {
@@ -20,7 +24,7 @@ const mobileHeaderNavWrapperBase = style({
   display: "block",
   position: "sticky",
   top: 0,
-  zIndex: 100,
+  zIndex: 2,
   paddingTop: theme.space[0],
   "@media": {
     [media.small]: {
@@ -50,7 +54,7 @@ export const mobileNavOverlay = style({
   height: "100vh",
   paddingTop: theme.space[4],
   background: theme.colors.primary,
-  zIndex: 100,
+  zIndex: 2,
   "@media": {
     [media.small]: {
       display: "none",

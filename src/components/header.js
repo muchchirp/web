@@ -95,8 +95,9 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
 
   return (
     <header>
+    
       <Container className={desktopHeaderNavWrapper}>
-        <Space size={2} />
+        <Space size={1} />
         <Flex variant="spaceBetween">
           <NavLink to="/">
             <VisuallyHidden>Home</VisuallyHidden>
@@ -125,7 +126,7 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
 
 
         </Flex>
-        <Space size={2} />
+        <Space size={1} />
       </Container>
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
         <Space size={2} />
