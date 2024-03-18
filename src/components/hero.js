@@ -55,7 +55,7 @@ export default function Hero(props) {
           </Box>
         </Flex>
 
-        {/* New Section for bcontent */}
+        {/* New Section for bcontent these are the 3 gift boxes*/}
         <Section>
           <Kicker style={{ paddingBottom: '20px' }}>{bsubhead}</Kicker>
             <Flex gap={4} variant="start" wrap>

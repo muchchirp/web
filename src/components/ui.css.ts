@@ -1,4 +1,4 @@
-//ui.css
+//ui.css.ts
 import { style, styleVariants } from "@vanilla-extract/css"
 import { calc } from "@vanilla-extract/css-utils"
 import { theme } from "../theme.css"
