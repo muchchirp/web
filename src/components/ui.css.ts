@@ -10,6 +10,8 @@ const breakpoints = ["55em", "66em", "75em"]
 // target 356px, 768px, 1200px
 
 
+
+
 export const media = {
   small: `screen and (min-width: ${breakpoints[0]})`,
   medium: `screen and (min-width: ${breakpoints[1]})`,
@@ -647,12 +649,14 @@ export const whiteBox = style({
   },
 });
 
-// Define responsive widths for boxes
 export const boxWidths = style({
-  width: '100%', // Default mobile width
+  width: '100%', // Full width on small screens
   '@media': {
-    [media.large]: {
-      width: '100px', // Adjust to your specific desktop width
+    [media.small]: {
+      width: 'calc(50% - 1rem)', // Two boxes per row on medium screens
+    },
+    [media.medium]: {
+      width: 'calc(33.3333% - 1rem)', // Three boxes per row on large screens
     },
   },
 });

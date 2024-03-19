@@ -18,7 +18,7 @@ const PricingTable = () => {
 
   return (
     <stripe-pricing-table
-      pricing-table-id="prctbl_1Ov13sGUjDHrefXGXkNkHWVF"
+      pricing-table-id="prctbl_1Ovhy7GUjDHrefXG9FJYRmS2"
       publishable-key="pk_live_51NAZ7SGUjDHrefXG5nHfp0EVIH1dB97WWDcpV91pulpqHNDApXhuetGWN30K1GKpDtKUHnBV64qziv1RZOuoFweU00VqnUVTei"
     ></stripe-pricing-table>
   );

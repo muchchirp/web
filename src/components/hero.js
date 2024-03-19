@@ -58,9 +58,9 @@ export default function Hero(props) {
         {/* New Section for bcontent these are the 3 gift boxes*/}
         <Section>
           <Kicker style={{ paddingBottom: '20px' }}>{bsubhead}</Kicker>
-            <Flex gap={4} variant="start" wrap>
+            <Flex gap={4}  variant="responsive">
               {bcontent.map((item, index) => (
-                <Box key={index} style={{ width: 'calc(30% - 6px)', backgroundColor: '#F5F8FE', padding: '2rem', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', }} className={whiteBox}>
+                <Box key={index} style={{  backgroundColor: '#F5F8FE', padding: '2rem', borderRadius: '16px', boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)', }} className={whiteBox}>
                   {item.image && item.image.gatsbyImageData && (
                     <GatsbyImage
                       image={getImage(item.image.gatsbyImageData)}
@@ -75,6 +75,9 @@ export default function Hero(props) {
 
           <Text center as="p" style={{ paddingTop: '20px' }}>{btext}</Text>
         </Section>
+
+
+
 
       </Container>
     </Section>
