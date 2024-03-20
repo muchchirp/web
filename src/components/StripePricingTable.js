@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import { Container, Section } from "./ui";
+
 
 const PricingTable = () => {
   useEffect(() => {
@@ -17,10 +19,15 @@ const PricingTable = () => {
   }, []);
 
   return (
-    <stripe-pricing-table
-      pricing-table-id="prctbl_1Ovhy7GUjDHrefXG9FJYRmS2"
-      publishable-key="pk_live_51NAZ7SGUjDHrefXG5nHfp0EVIH1dB97WWDcpV91pulpqHNDApXhuetGWN30K1GKpDtKUHnBV64qziv1RZOuoFweU00VqnUVTei"
-    ></stripe-pricing-table>
+    <Container>
+      <Section style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
+        {/* This section now has padding applied to it */}
+        <stripe-pricing-table
+          pricing-table-id="prctbl_1OwJs8GUjDHrefXGT4ttuAcR"
+          publishable-key="pk_live_51NAZ7SGUjDHrefXG5nHfp0EVIH1dB97WWDcpV91pulpqHNDApXhuetGWN30K1GKpDtKUHnBV64qziv1RZOuoFweU00VqnUVTei"
+        ></stripe-pricing-table>
+      </Section>
+    </Container>
   );
 };
 
