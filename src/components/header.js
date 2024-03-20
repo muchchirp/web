@@ -74,7 +74,7 @@ export default function Header() {
   const { navItems, cta } = data.layout.header
  // console.error("homepageLink value:", homepageLink);
 // ID of the item you want to display in the button
-const targetItemId = "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8"; // Replace with the actual ID "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8"
+const targetItemId = "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8";
 
 // Find the specific link by ID
 const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targetItemId)?.node;
@@ -94,7 +94,7 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
   }, [isOpen])
 
   return (
-    <header>
+    <header >
     
       <Container className={desktopHeaderNavWrapper}>
         <Space size={1} />

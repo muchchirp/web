@@ -5,7 +5,7 @@ import { media } from "./ui.css"
 
 export const desktopHeaderNavWrapper = style({
   position: "fixed",
-  top: 0,
+  top: 4,
   left: 0,
   right: 0,
   zIndex: 2,

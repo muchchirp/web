@@ -55,10 +55,10 @@ const CustomCookieConsent = () => {
 
     return (
         <div className={styles.cookieConsentContainer}>
-            <p className={styles.message}>We use cookies for a better experience. <a href="/cookie-policy">More...</a></p>
+            <p className={styles.message} style={{ fontSize: '0.875rem' }}>We use cookies for a better experience. <a href="/cookie-policy">More...</a></p>
             <div>
-                <Button onClick={acceptCookies} style={{ marginRight: '10px' }}>Accept All</Button>
-                <NavLink onClick={rejectCookies}>Reject All</NavLink>
+                <Button onClick={acceptCookies} style={{ marginRight: '20px', fontSize: '0.875rem' }} >Accept All</Button>
+                <NavLink onClick={rejectCookies} style={{ fontSize: '0.875rem' }}>Reject All</NavLink>
             </div>
         </div>
     );

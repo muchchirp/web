@@ -10,7 +10,7 @@ export const cookieConsentContainer = style({
   right: 0,
   backgroundColor: 'white',
   color: 'black',
-  padding: '20px',
+  padding: '10px',
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
@@ -33,6 +33,7 @@ export const acceptButton = style({
   color: theme.colors.primary,
   cursor: 'pointer',
   marginLeft: '10px',
+  
 });
 
 export const rejectText = style({
