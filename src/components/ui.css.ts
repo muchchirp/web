@@ -204,6 +204,8 @@ export const box = styleVariants({
 export const section = style({
   paddingTop: theme.space[4],
   paddingBottom: theme.space[4],
+  scrollMarginTop: '150px', // This will add 20px space above the section when it's targeted by an anchor link
+
   "@media": {
     [media.small]: {
       paddingTop: theme.space[5],

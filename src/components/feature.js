@@ -16,7 +16,7 @@ export default function Feature(props) {
   const imageAlt = props.image?.alt ? props.image.alt : '';
 
   return (
-    <Section padding={4} background="muted">
+    <Section id="why-vpn" padding={4} background="muted">
       <Container>
         <Flex gap={4} variant="responsive">
           <Box width="half" order={props.flip ? 1 : null}>
