@@ -23,7 +23,7 @@ const PricingTable = () => {
       <Section style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
         {/* This section now has padding applied to it */}
         <stripe-pricing-table
-          pricing-table-id="prctbl_1OwJs8GUjDHrefXGT4ttuAcR"
+          pricing-table-id="prctbl_1P8S8pGwGUbg9zV0gU1k6QPT"
           publishable-key="pk_live_51P8Pu0GwGUbg9zV0o5bVTTJ3ukh8wrGSjmk5HSu9pMMAYcrYKj1ZJ4HtvpXPdU0CX4hwSH8JKbyFUlkub7dslnwO00ClswCDug"
         ></stripe-pricing-table>
       </Section>
