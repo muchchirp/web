@@ -121,13 +121,19 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
             </FlexList>
           </nav>
 
-          <div>{targetLink && <Button to={targetLink.href}>{targetLink.text}</Button>}</div>
-
+          <div style={{ marginRight: '10px' }}>
+      {targetLink && <Button to={targetLink.href}>{targetLink.text}</Button>}
+    </div>
 
 
         </Flex>
         <Space size={1} />
       </Container>
+
+
+
+
+
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
         <Space size={2} />
         <Flex variant="spaceBetween">
@@ -181,7 +187,10 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
                     </NavLink>
                   )}
                 </li>
+                
               ))}
+
+  
             </FlexList>
           </nav>
         </div>
