@@ -16,10 +16,10 @@ export default function Feature(props) {
   const imageAlt = props.image?.alt ? props.image.alt : '';
 
   return (
-    <Section id="why-vpn" padding={4} background="muted">
-      <Container>
-        <Flex gap={4} variant="responsive">
-          <Box width="half" order={props.flip ? 1 : null}>
+    <Section  padding={4} background="muted">
+      <Container >
+        <Flex  gap={4} variant="responsive">
+          <Box  width="half" order={props.flip ? 1 : null}>
             {props.image && (
               <GatsbyImage
               alt={imageAlt}
@@ -28,7 +28,7 @@ export default function Feature(props) {
             )}
           </Box>
           <Box width="half">
-            <Subhead>
+            <Subhead >
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.heading}
             </Subhead>

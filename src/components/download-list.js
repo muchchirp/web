@@ -23,15 +23,15 @@ export default function DownloadList(props) {
   console.log(props); // This line will log the props to the console
 
   return (
-    <Section id="downloads" paddingY={4}>
-      <Container width="narrow">
+    <Section  id="downloads">
+      <Container  width="narrow">
         {props.heading && (
-          <Heading as="h1" center variant="heading">
+          <Heading as="h1" center variant="heading" >
             {props.heading}
-          </Heading>
+          </Heading >
         )}
         {props.kicker && ( // Check if kicker exists and then render it
-          <Text center variant="text" style={{ marginTop: '0.5rem' }}> 
+          <Text  center variant="text" style={{ marginTop: '0.5rem' }}> 
             {props.kicker}
           </Text>
         )}
