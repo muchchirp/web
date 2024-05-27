@@ -149,6 +149,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       image: HomepageImage
       alt: String
       text: String
+      href: String
     }
 
     interface HomepageLogoList implements Node & HomepageBlock {
@@ -505,6 +506,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       image: HomepageImage @link(by: "id", from: "image.asset._ref")
       alt: String
+      href: String
       text: String
     }
 
