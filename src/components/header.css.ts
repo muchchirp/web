@@ -1,11 +1,10 @@
-//header.css.ts
 import { style, styleVariants } from "@vanilla-extract/css"
 import { theme } from "../theme.css"
 import { media } from "./ui.css"
 
 export const desktopHeaderNavWrapper = style({
   position: "fixed",
-  top: 4,
+  top: 44,
   left: 0,
   right: 0,
   zIndex: 2,
@@ -25,7 +24,7 @@ const mobileHeaderNavWrapperBase = style({
   position: "sticky",
   top: 0,
   zIndex: 2,
-  paddingTop: theme.space[0],
+  paddingTop: theme.space[3],
   "@media": {
     [media.small]: {
       display: "none",
@@ -70,4 +69,27 @@ export const mobileNavLink = style({
   paddingBottom: theme.space[2],
   paddingLeft: theme.space[4],
   paddingRight: theme.space[4],
+})
+
+// New styles for the IP detection bar
+export const ipBar = style({
+  backgroundColor: 'black',
+  padding: '5px',
+  textAlign: 'center',
+  zIndex: 3,
+  position: 'fixed',
+  top: 0,
+  left: 0,
+  right: 0,
+  fontSize: '12px', // Set font size to 12px
+  color: 'white', // Ensure default text color is white
+
+})
+
+export const ipBarProtected = style({
+  color: 'white !important',
+})
+
+export const ipBarUnprotected = style({
+  color: 'pink !important',
 })

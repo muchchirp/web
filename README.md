@@ -7,4 +7,4 @@ sanity login (chooose github and make sure correct chrome is in focus)
 sanity deploy
 Edit the schema in gatsby node: gatsby-node.js
 
-Added the .pkg file to git lfs: git lfs track "*.pkg"
+Added the .pkg file to git lfs: git lfs track "*.pkg" && git lfs track "*.exe" git lfs track "*.apk"

@@ -18,6 +18,9 @@ import {
   desktopHeaderNavWrapper,
   mobileHeaderNavWrapper,
   mobileNavSVGColorWrapper,
+  ipBar, // Import the new style
+  ipBarProtected,
+  ipBarUnprotected
 } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import BrandLogo from "./brand-logo"
@@ -62,28 +65,18 @@ export default function Header() {
               }
             }
           }
-
         }
       }
     }
   `)
  
   const { homepageLink } = data;
-//  console.error(data);
+  const { navItems, cta } = data.layout.header;
+  const targetItemId = "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8";
+  const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targetItemId)?.node;
 
-  const { navItems, cta } = data.layout.header
- // console.error("homepageLink value:", homepageLink);
-// ID of the item you want to display in the button
-const targetItemId = "-27fd89a4-d3ef-5ebe-b5c8-538e2fe5e7b8";
-
-// Find the specific link by ID
-const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targetItemId)?.node;
-
-
- console.log(data); // This will log the data object containing all GraphQL query results
-
-   
   const [isOpen, setOpen] = React.useState(false)
+  const [ipStatus, setIpStatus] = React.useState({ ip: 'Loading...', status: 'Loading...' });
 
   React.useEffect(() => {
     if (isOpen) {
@@ -93,9 +86,33 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
     }
   }, [isOpen])
 
+  React.useEffect(() => {
+    const fetchIpStatus = async () => {
+      try {
+        const response = await fetch('https://check.cicadavpn.com/check-ip'); 
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
+        }
+        const data = await response.json();
+        console.log('Fetched data:', data); // Log the data to see the structure
+        setIpStatus({ ip: data.ip, status: data.status });
+      } catch (error) {
+        console.error("Error fetching IP status:", error);
+        setIpStatus({ ip: 'Error', status: 'Error fetching IP status' });
+      }
+    };
+
+    fetchIpStatus();
+  }, []);
+
+  const statusClass = ipStatus.status === 'Not using CicadaVPN' ? ipBarUnprotected : ipBarProtected;
+
   return (
-    <header >
-    
+    <header>
+      <div className={ipBar}>
+        <span>IP: {ipStatus.ip} · Status: </span>
+        <span className={statusClass}>{ipStatus.status}</span>
+      </div>
       <Container className={desktopHeaderNavWrapper}>
         <Space size={1} />
         <Flex variant="spaceBetween">
@@ -120,19 +137,12 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
                 ))}
             </FlexList>
           </nav>
-
           <div style={{ marginRight: '10px' }}>
-      {targetLink && <Button to={targetLink.href}>{targetLink.text}</Button>}
-    </div>
-
-
+            {targetLink && <Button to={targetLink.href}>{targetLink.text}</Button>}
+          </div>
         </Flex>
         <Space size={1} />
       </Container>
-
-
-
-
 
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
         <Space size={2} />
@@ -187,10 +197,7 @@ const targetLink = data.allHomepageLink.edges.find(edge => edge.node.id === targ
                     </NavLink>
                   )}
                 </li>
-                
               ))}
-
-  
             </FlexList>
           </nav>
         </div>
