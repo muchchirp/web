@@ -87,7 +87,7 @@ export const ipBar = style({
 })
 
 export const ipBarProtected = style({
-  color: 'white !important',
+  color: 'lightgreen !important',
   fontWeight: 'bold' // Make the text bold
 
 })
