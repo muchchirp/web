@@ -20,7 +20,7 @@ const PricingTable = () => {
 
   return (
     <Container>
-      <Section style={{ paddingTop: '2rem', paddingBottom: '1rem' }}>
+      <Section style={{ paddingTop: '4rem', paddingBottom: '1rem' }}>
         {/* This section now has padding applied to it */}
         <stripe-pricing-table
           pricing-table-id="prctbl_1P8S8pGwGUbg9zV0gU1k6QPT"
