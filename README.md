@@ -1,3 +1,5 @@
+# Quick start instructions for sanity headless
+
 yarn start
 cd studio
 sanity start
@@ -8,3 +10,4 @@ sanity deploy
 Edit the schema in gatsby node: gatsby-node.js
 
 Added the .pkg file to git lfs: git lfs track "*.pkg" && git lfs track "*.exe" git lfs track "*.apk"
+
